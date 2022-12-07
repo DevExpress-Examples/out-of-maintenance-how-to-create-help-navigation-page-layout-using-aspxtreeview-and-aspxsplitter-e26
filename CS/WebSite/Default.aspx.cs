@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using DevExpress.Web.ASPxTreeView;
+using DevExpress.Web;
 
 public partial class _Default : System.Web.UI.Page 
 {
@@ -14,7 +14,7 @@ public partial class _Default : System.Web.UI.Page
         }
     }
 
-    protected void callbackPanel_Callback(object sender, DevExpress.Web.ASPxClasses.CallbackEventArgsBase e) {
+    protected void callbackPanel_Callback(object sender, DevExpress.Web.CallbackEventArgsBase e) {
         TreeViewNode foundNode = FindTextInNodesRecursive(this.tbSearchQuery.Text.ToLower().Trim(),
             this.treeView.Nodes);
         this.treeView.SelectedNode = foundNode;

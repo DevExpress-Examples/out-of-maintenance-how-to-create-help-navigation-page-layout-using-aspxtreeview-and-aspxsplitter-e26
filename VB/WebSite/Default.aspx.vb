@@ -4,7 +4,7 @@ Imports System.Collections.Generic
 Imports System.Web
 Imports System.Web.UI
 Imports System.Web.UI.WebControls
-Imports DevExpress.Web.ASPxTreeView
+Imports DevExpress.Web
 
 Partial Public Class _Default
 	Inherits System.Web.UI.Page
@@ -15,7 +15,7 @@ Partial Public Class _Default
 		End If
 	End Sub
 
-	Protected Sub callbackPanel_Callback(ByVal sender As Object, ByVal e As DevExpress.Web.ASPxClasses.CallbackEventArgsBase)
+	Protected Sub callbackPanel_Callback(ByVal sender As Object, ByVal e As DevExpress.Web.CallbackEventArgsBase)
 		Dim foundNode As TreeViewNode = FindTextInNodesRecursive(Me.tbSearchQuery.Text.ToLower().Trim(), Me.treeView.Nodes)
 		Me.treeView.SelectedNode = foundNode
 		If foundNode IsNot Nothing Then
